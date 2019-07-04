@@ -55,19 +55,21 @@ function Chart_Make(data,city,color){
       ]
     },
     options: {
+      //スマートフォンでChartが崩れるの修正
+      maintainAspectRatio: false,
       scales: {
         xAxes: [{
           ticks: {
             suggestedMax: 40,
             suggestedMin: 0,
-            stepSize: 10,
+            stepSize: 5,
           }
         }]
       },
       layout: {
         padding: {
           left: 20,
-          right: 100,
+          right: 20,
           top: 20,
           bottom: 20
         }

@@ -22,7 +22,9 @@
   </section>
 
   <section>
-    <canvas id="myBarChart"></canvas>
+    <div class="chart-container" style="position: relative; width:80vw; height:50vh">
+      <canvas id="myBarChart"></canvas>
+    </div>
   </section>
 
 </body>
