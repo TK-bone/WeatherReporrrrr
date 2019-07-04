@@ -4,10 +4,7 @@
 
 //$(function() {
 $('button#GetCanvas').click(function(){
-
-
   var Place_val = $('[name=Place]').val().split(",");
-
   var API_KEY = '20b7998fd086020b5654ed30e0e07018'
   //var city = 'Tokyo';
   var city = Place_val[0];
@@ -61,7 +58,7 @@ function Chart_Make(data,city,color){
       scales: {
         xAxes: [{
           ticks: {
-            suggestedMax: 50,
+            suggestedMax: 40,
             suggestedMin: 0,
             stepSize: 10,
           }

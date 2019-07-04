@@ -42,8 +42,15 @@ class Weather_Report
     {
         $dt_txt_array = array();
         $i = 0;
+        $replace_array = array(
+            '-'=>'/',
+            ':00:00'=>'時'
+        );
         foreach ($json_list as $key => $value) {
             if($i < $max_num){
+                $replace_keys = array_keys( $replace_array);
+                $replace_array_values = array_values( $replace_array);
+                $json_list[$key]["dt_txt"] = str_replace($replace_keys,$replace_array_values,$json_list[$key]["dt_txt"]);
                 $dt_txt_array[] = $json_list[$key]["dt_txt"];
             }
             $i++;
