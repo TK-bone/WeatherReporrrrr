@@ -1,3 +1,7 @@
 .center{
     text-align: center;
 }
+body{
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 3px;
+}

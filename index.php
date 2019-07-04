@@ -4,12 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <title>WeatherReporrrrr</title>
+<link href="//fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <section>
     <div class="center">
       <h1>WeatherReporrrrr</h1>
+      <dl>
+        <dt>概要</dt>
+        <dd>OpenWeatherMap APIを使用して</dd>
+        <dd>4大都市の気温を中途半端に取得してくるアプリ</dd>
+      </dl>
+
       <select name="Place">
         <option value="Tokyo,#00ced1">東京</option>
         <option value="Fukuoka,#6495ed">福岡</option>
