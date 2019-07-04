@@ -2,9 +2,15 @@
 * OpenWeatherMapAPI通信用
 */
 
-$(function() {
+//$(function() {
+$('button#GetCanvas').click(function(){
+
+
+  var Place_val = $('[name=Place]').val().split(",");
+
   var API_KEY = '20b7998fd086020b5654ed30e0e07018'
-  var city = 'Tokyo';
+  //var city = 'Tokyo';
+  var city = Place_val[0];
   var url = '//api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
     url: url,
@@ -21,7 +27,7 @@ $(function() {
       }
     })
     .done( (data) => {
-      Chart_Make(data,city);
+      Chart_Make(data,city,Place_val[1]);
     })
     .fail( (data) => {
       alert("ajax.php通信失敗");
@@ -37,7 +43,7 @@ $(function() {
 * param (array,string)
 */
 
-function Chart_Make(data,city){
+function Chart_Make(data,city,color){
   var ctx = document.getElementById("myBarChart");
   var myBarChart = new Chart(ctx, {
     type: 'horizontalBar',
@@ -47,7 +53,7 @@ function Chart_Make(data,city){
         {
           label: city+'の気温',
           data: data["temperature"],
-          backgroundColor: "rgba(219,39,91,0.5)"
+          backgroundColor: color
         }
       ]
     },
