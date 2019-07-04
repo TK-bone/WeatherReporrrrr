@@ -4,7 +4,7 @@
 //$(function() {
 $('button#GetCanvas').click(function(){
   //HTMLの初期化処理
-  $('.chart-container').html('<div class="chart-container" style="position: relative; width:80vw; height:50vh"><canvas id="myBarChart"></canvas></div>');
+  $('.chart-container').html('<div class="chart-container" style="position: relative; width:90vw; height:50vh"><canvas id="myBarChart"></canvas></div>');
   var Place_val = $('[name=Place]').val().split(",");
   var API_KEY = '20b7998fd086020b5654ed30e0e07018'
   //var city = 'Tokyo';
