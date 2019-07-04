@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
   <section>
     <div class="center">
       <h1>WeatherReporrrrr</h1>
@@ -26,7 +25,6 @@
       <canvas id="myBarChart"></canvas>
     </div>
   </section>
-
 </body>
 
 <script src="//code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
