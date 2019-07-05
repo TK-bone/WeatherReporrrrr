@@ -1,15 +1,11 @@
-
-
 /*
-* OpenWeatherMapAPI通信用
+* OpenWeatherMapAPI Request
 */
-//$(function() {
 $('button#GetCanvas').click(function(){
   //HTMLの初期化処理
   $('.chart-container').html('<div class="chart-container" style="position: relative; width:90vw; height:50vh"><canvas id="myBarChart"></canvas></div>');
   var Place_val = $('[name=Place]').val().split(",");
-  var API_KEY = '20b7998fd086020b5654ed30e0e07018'
-  //var city = 'Tokyo';
+  var API_KEY = Key_Make();
   var city = Place_val[0];
   var url = '//api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
@@ -30,17 +26,35 @@ $('button#GetCanvas').click(function(){
       Chart_Make(data,city,Place_val[1]);
     })
     .fail( (data) => {
-      alert("ajax.php通信失敗");
+      alert("ajax.php Communication failure");
     });
   })
   .fail(function(data) {
-    alert("API通信失敗");
+    alert("OpenWeatherMapAPI Communication failure");
   });
+
+  /*
+  * Key_Make
+  * Simple key division processing
+  * Probably not meaningful
+  * @return string
+  */
+  function Key_Make(){
+    let API_KEY_string = "";
+    const API_KEY_array = new Array("0c71","63a59","26107","b5480","0ba7a","e8da730c");
+    let Order = new Array(3,5,1,2,0,4);
+    $(Order).each(function(index,num){
+      API_KEY_string += API_KEY_array[num];
+    })
+    return API_KEY_string;
+  }
 });
 
 /*
 * Chartjs呼び出し
-* param (array,string)
+* @param array  data
+* @param string city
+* @param string color
 */
 function Chart_Make(data,city,color){
   var ctx = document.getElementById("myBarChart");
@@ -79,3 +93,4 @@ function Chart_Make(data,city,color){
     }
   });
 }
+
