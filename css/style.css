@@ -1,7 +1,12 @@
 .center{
     text-align: center;
 }
-body{
+.center h1{
     font-family: 'PT Sans', sans-serif;
     letter-spacing: 3px;
+}
+.center dl dd{
+    font-size: 1em;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1px;
 }

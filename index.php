@@ -13,8 +13,8 @@
       <h1>WeatherReporrrrr</h1>
       <dl>
         <dt>概要</dt>
-        <dd>OpenWeatherMap APIを使用して</dd>
-        <dd>4大都市の気温を中途半端に取得してくるアプリ</dd>
+        <dd>freeWeatherAPIを使用して</dd>
+        <dd>気温を中途半端に取得してくるアプリ</dd>
       </dl>
 
       <select name="Place">

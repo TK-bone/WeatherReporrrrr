@@ -7,7 +7,7 @@
 // $json = json_decode($_POST,true);
 
 if(!isset($_POST["json"])){
-    echo 'データが正常に送信されていません。';
+    throw new Exception("データが正常に送信されていません。");
     exit;
 }
 
@@ -17,19 +17,24 @@ $json = $_POST["json"];
  * Weather_Report
  *
  * 受け取ったJSONデータを整形する
- *
+ * @param array $json
+ * @param int   $max_num
  */
 
 class Weather_Report
 {
-    public $json;
-    public $list;
+    private $json;
+    private $max_num;
     public function __construct( array $json,int $max_num)
     {
-        $this->json = $json;
-        $dt_txt = $this->Json_Shaping_dt_txt($this->json["list"],$max_num);
-        $temperature = $this->Json_Shaping_temperature($this->json["list"],$max_num);
 
+        $this->json = $json;
+        $this->max_num = $max_num;
+        
+        // 日時データ整形
+        $dt_txt = $this->Json_Shaping_dt_txt($this->json["list"],$max_num);
+        // 温度データ整形
+        $temperature = $this->Json_Shaping_temperature($this->json["list"],$max_num);
         $output_array =array(
             'dt_txt'=>$dt_txt,
             'temperature'=>$temperature,
