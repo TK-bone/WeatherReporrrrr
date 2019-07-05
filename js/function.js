@@ -1,3 +1,5 @@
+
+
 /*
 * OpenWeatherMapAPI通信用
 */
