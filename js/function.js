@@ -4,10 +4,10 @@
 $('button#GetCanvas').click(function(){
   //HTMLの初期化処理
   $('.chart-container').html('<div class="chart-container" style="position: relative; width:90vw; height:50vh"><canvas id="myBarChart"></canvas></div>');
-  var Place_val = $('[name=Place]').val().split(",");
-  var API_KEY = Key_Make();
-  var city = Place_val[0];
-  var url = '//api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
+  let Place_val = $('[name=Place]').val().split(",");
+  let API_KEY = Key_Make();
+  let city = Place_val[0];
+  let url = '//api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
     url: url,
     dataType: "json",
@@ -57,8 +57,8 @@ $('button#GetCanvas').click(function(){
 * @param string color
 */
 function Chart_Make(data,city,color){
-  var ctx = document.getElementById("myBarChart");
-  var myBarChart = new Chart(ctx, {
+  let ctx = document.getElementById("myBarChart");
+  let myBarChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
       labels: data["dt_txt"],
